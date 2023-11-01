@@ -1,97 +1,23 @@
-Skip to content
-kusumikabarua
-/
-L-square-QTify
-
-Type / to search
-
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Pane width
-Use a value between 0% and 0%
-
-Change width
-Files
-Go to file
-t
-qtify
-public
-src
-api
-assets
-components
-Accordion
-Button
-Card
-Carousel
-FaqSection
-HeroImage
-Logo
-Navbar
-Search
-Section
-Section.jsx
-Section.module.css
-Tabs
-constants
-App.css
-App.js
-App.test.js
-index.css
-index.js
-logo.svg
-reportWebVitals.js
-setupTests.js
-.gitignore
-README.md
-package-lock.json
-package.json
-README.md
-sample.text
-Documentation • Share feedback
-BreadcrumbsL-square-QTify/qtify/src/components/Section
-/Section.module.css
-Latest commit
- 
-History
-File metadata and controls
-
-Code
-
-Blame
-31 lines (25 loc) · 486 Bytes
 .border {
-    border-top: 1px solid var(--color-primary);
-    border-bottom: 1px solid var(--color-primary);
-    padding-top: 18px;
-    padding-bottom: 18px;
+  border-top: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 .wrapper {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap;
-    padding: 18px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 18px;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 18px;
-    
-   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
 }
-
-
 
 .cardsWrapper {
-    margin-top: 18px;
-    
+  margin-top: 18px;
 }
-

@@ -28,9 +28,8 @@ html,body {
 }
 
 body{
-  background-color: var(--color-black);
+ 
   font-family: "Poppins",sans-serif;
-  color: var(--color-white);
   overflow-x: hidden;
 }
 
