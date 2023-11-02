@@ -1,6 +1,6 @@
 
 import axios from "axios";
-export const BACKEND_ENDPOINT=" https://geektrust.s3.ap-southeast-1.amazonaws.com/coding-problems/shopping-cart";
+import {BACKEND_ENDPOINT} from '../constants/constants'
 
 export const fetchCatalogue = async() => {
     try{
