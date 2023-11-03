@@ -10,6 +10,7 @@ const Products = () => {
 
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [searchedProducts, setSearchedProducts] = useState([]);
   useEffect(()=>{
     getAllProducts();
   },[])
@@ -17,7 +18,8 @@ const Products = () => {
     try {
       const data = await fetchCatalogue();
       setProducts(data);
-      setFilteredProducts(data)
+      setFilteredProducts(data);
+      setSearchedProducts(data);
     } catch (err) {
       console.error(err);
     }
@@ -27,10 +29,10 @@ const Products = () => {
     <div>
       <div className={styles.border}>
         <div className={styles.header}>
-          <Search />
+          <Search products ={products} setSearchedProducts ={setSearchedProducts} setFilteredProducts={setFilteredProducts} />
         </div>
         <Grid container>
-        <Grid item xs={12} md={3} className={styles.border}><ProductFilter products={products} setFilteredProducts={setFilteredProducts} filteredProducts={filteredProducts}/></Grid>
+        <Grid item xs={12} md={3} className={styles.border}><ProductFilter products={products} searchedProducts={searchedProducts} setFilteredProducts={setFilteredProducts} filteredProducts={filteredProducts}/></Grid>
         <Grid item xs={12} md={9}  className={styles.border}>
       
         {filteredProducts.length === 0 ? (

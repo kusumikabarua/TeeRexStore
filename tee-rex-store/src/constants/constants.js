@@ -6,6 +6,7 @@ export const TITLE_TYPE="Type";
 export const UPTO_250 = `0- INR 250`;
 export const FROM_251_TO_450 =`INR 251 - INR 450`;
 export const ABOVE_450 =`ABOVE INR 450`;
+export const SEARCH_PLACEHOLDER ="Search for products";
 
 export const genderConst = [
     `Men`,`Women`

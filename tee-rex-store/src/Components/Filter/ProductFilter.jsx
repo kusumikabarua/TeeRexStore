@@ -52,7 +52,7 @@ const Filter = ({ title, data, filter, setFilter }) => {
 export const ProductFilter = ({
   products,
   setFilteredProducts,
-  filteredProducts,
+  searchedProducts,
 }) => {
   const color = [...new Set(products.map((item) => item.color))];
   const gender = [...genderConst];
@@ -87,7 +87,7 @@ export const ProductFilter = ({
     return false;
   };
   const applyFilter = () => {
-    let temp = products.filter(
+    let temp = searchedProducts.filter(
       (item) =>
              filteredColors.length === 0 || filteredColors.includes(item.color)
     );
