@@ -7,6 +7,15 @@ export const UPTO_250 = `0- INR 250`;
 export const FROM_251_TO_450 =`INR 251 - INR 450`;
 export const ABOVE_450 =`ABOVE INR 450`;
 export const SEARCH_PLACEHOLDER ="Search for products";
+export const SITE_NAME ="Tee Rex Store";
+export const PRODUCTS ="Products";
+export const ADD_TO_CART_WARNING ="Item already in cart.Use quantity  in Cart to update item or remove item ";
+export const WARNING_MSG ="warning";
+export const MAX_QUANTITY_WARNING= "Max quantity of tshirts added. Cannot add any more";
+export const TOTAL_AMOUNT="Total Amount"
+export const CART_PRODUCTS_LOCAL_STORAGE ="cartProducts";
+export const PRODUCTS_LOCAL_STORAGE ="products";
+export const CURRENCY ="INR";
 
 export const genderConst = [
     `Men`,`Women`

@@ -3,15 +3,17 @@ import styles from "./Navbar.module.css";
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { SITE_NAME,PRODUCTS} from '../../constants/constants'
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
   return (
     <nav className={styles.navbar}>
-       <h1>Tee Rex Store</h1>
+       <h1>{SITE_NAME}</h1>
        <div>
-       <Button variant="fill">Shopping Cart</Button>
-       <IconButton  aria-label="Cart"> <ShoppingCartOutlinedIcon /></IconButton>
+       <Link to="/"><Button variant="fill">{PRODUCTS}</Button></Link>
+       <Link to="cart"><IconButton  aria-label="Cart"> <ShoppingCartOutlinedIcon /></IconButton></Link>
       </div>
       
     </nav>
