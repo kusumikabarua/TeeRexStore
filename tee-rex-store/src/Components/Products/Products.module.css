@@ -3,12 +3,7 @@
   padding-top: 18px;
   padding-bottom: 18px;
 }
-.wrapper {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 18px;
-}
+
 
 .header {
   display: flex;
@@ -17,6 +12,3 @@
   padding: 18px;
 }
 
-.cardsWrapper {
-  margin-top: 18px;
-}

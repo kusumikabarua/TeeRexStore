@@ -16,6 +16,8 @@ export const TOTAL_AMOUNT="Total Amount"
 export const CART_PRODUCTS_LOCAL_STORAGE ="cartProducts";
 export const PRODUCTS_LOCAL_STORAGE ="products";
 export const CURRENCY ="INR";
+export const CART_EMPTY ="Cart is empty. Add items to the cart .";
+export const ADD_TO_CART ="ADD TO CART";
 
 export const genderConst = [
     `Men`,`Women`

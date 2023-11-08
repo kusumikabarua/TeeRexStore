@@ -12,29 +12,18 @@
     min-height: 60vh;
 }
 
-.cart-footer {
-    padding: 1rem;
-}
+
 
 .image_container {
     max-height: 10rem;
     max-width: 8rem;
 }
 
-.checkout-btn {
-    text-transform: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
 
-.empty-cart-icon {
+
+.empty_cart_icon {
     width: 3rem !important;
     height: 3rem !important;
     color: #aaa;
 }
 
-.cart-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}

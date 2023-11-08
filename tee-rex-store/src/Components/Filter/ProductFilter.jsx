@@ -102,10 +102,7 @@ export const ProductFilter = ({
     let temp3 = temp2.filter(
       (item) => filteredType.length === 0 || filteredType.includes(item.type)
     );
-    // console.log(temp);
-    // console.log(temp1);
-    // console.log(temp2);
-    // console.log(temp3);
+   
     setFilteredProducts(temp3);
   };
   return (

@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import styles from  "./ProductCard.module.css";
+import {ADD_TO_CART} from "../../constants/constants"
 
 const ProductCard = ({ product, handleAddToCart=null }) => {
  const {imageURL,name,price,currency} =product;
@@ -28,7 +29,7 @@ const ProductCard = ({ product, handleAddToCart=null }) => {
       </CardContent>
       <CardActions>
         <Button  variant="contained" startIcon={<AddShoppingCartOutlined />}
-        onClick ={handleAddToCart}>ADD TO CART</Button>
+        onClick ={handleAddToCart}>{ADD_TO_CART}</Button>
       </CardActions>
     </Card>
   );

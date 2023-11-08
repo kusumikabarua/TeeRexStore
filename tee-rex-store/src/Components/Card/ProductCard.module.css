@@ -5,11 +5,3 @@
     justify-content: space-between;
 }
 
-.card-actions {
-    margin-bottom: 1rem;
-}
-
-.card-button {
-    text-transform: none;
-    font-weight: 600;
-}
