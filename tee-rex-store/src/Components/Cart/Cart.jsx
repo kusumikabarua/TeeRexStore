@@ -18,7 +18,7 @@ import {
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import { IconButton, Stack } from "@mui/material";
-import {getTotalCartQuantity} from "../../utils/utils"
+import { getTotalCartQuantity } from "../../utils/utils";
 
 const ItemQuantity = ({ value, handleAdd, handleDelete }) => {
   return (
@@ -48,7 +48,7 @@ const Cart = () => {
       localStorage.getItem(CART_PRODUCTS_LOCAL_STORAGE) || "[]"
     );
     let totalQuantity = getTotalCartQuantity();
-    setTotalCartQuantity(totalQuantity); 
+    setTotalCartQuantity(totalQuantity);
     setCartItems(cartProducts);
   }, []);
 
@@ -57,7 +57,6 @@ const Cart = () => {
       (acc, item) => acc + item.quantity * item.price,
       0
     );
-   
 
     return `${CURRENCY}  ${total}`;
   };
@@ -70,26 +69,30 @@ const Cart = () => {
     );
     if (quantity === 0) {
       cartProducts.splice(
-        cartProducts.findIndex((item) => item.id == id),
+        cartProducts.findIndex((item) => item.id === id),
         1
       );
-      console.log(cartProducts);
-      localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+
+      localStorage.setItem(
+        CART_PRODUCTS_LOCAL_STORAGE,
+        JSON.stringify(cartProducts)
+      );
       setCartItems(cartProducts);
       let totalQuantity = getTotalCartQuantity();
-      setTotalCartQuantity(totalQuantity); 
+      setTotalCartQuantity(totalQuantity);
       return;
     }
 
-    let item = products.find((item) => item.id == id);
-
+    let item = products.find((item) => item.id === id);
 
     if (item.quantity >= quantity) {
       let cartItem = cartProducts.find((item) => item.id === id);
       cartItem.quantity = quantity;
-      console.log(cartProducts);
       setCartItems(cartProducts);
-      localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+      localStorage.setItem(
+        CART_PRODUCTS_LOCAL_STORAGE,
+        JSON.stringify(cartProducts)
+      );
       let totalQuantity = getTotalCartQuantity();
       setTotalCartQuantity(totalQuantity);
     } else {
@@ -101,7 +104,7 @@ const Cart = () => {
 
   return (
     <div>
-      <Navbar quantity={totalCartQuantity}/>
+      <Navbar quantity={totalCartQuantity} />
       {cartItems.length !== 0 &&
         cartItems.map((item) => {
           const { imageURL, name, price, currency, quantity, id } = item;
@@ -114,14 +117,7 @@ const Cart = () => {
               alignItems="flex-end"
             >
               <Box className={styles.image_container}>
-                <img
-                 
-                  src={imageURL}
-                 
-                  alt={name}
-                  width="100%"
-                  height="100%"
-                />
+                <img src={imageURL} alt={name} width="100%" height="100%" />
               </Box>
               <Box
                 display="flex"
@@ -132,8 +128,7 @@ const Cart = () => {
               >
                 <div>{name}</div>
                 <Box padding="0.5rem">
-                  {currency}
-                  {price}
+                  {currency} {price}
                 </Box>
                 <Box
                   display="flex"
@@ -141,17 +136,11 @@ const Cart = () => {
                   alignItems="center"
                 >
                   <ItemQuantity
-                    
                     handleAdd={(e) => {
-                      handleQuantity(
-                        id,
-                        quantity + 1
-                      );
+                      handleQuantity(id, quantity + 1);
                     }}
                     handleDelete={(e) => {
-                      handleQuantity(                                            id,
-                        quantity - 1
-                      );
+                      handleQuantity(id, quantity - 1);
                     }}
                     value={quantity}
                   />
