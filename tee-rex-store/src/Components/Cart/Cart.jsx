@@ -15,10 +15,10 @@ import {
 import {
   AddOutlined,
   RemoveOutlined,
-
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import { IconButton, Stack } from "@mui/material";
+import {getTotalCartQuantity} from "../../utils/utils"
 
 const ItemQuantity = ({ value, handleAdd, handleDelete }) => {
   return (
@@ -47,13 +47,8 @@ const Cart = () => {
     let cartProducts = JSON.parse(
       localStorage.getItem(CART_PRODUCTS_LOCAL_STORAGE) || "[]"
     );
- 
-    let totalQuantity =  cartProducts.reduce(
-      (acc, item) => acc + item.quantity,
-      0
-    );
-    setTotalCartQuantity(totalQuantity);
-   //console.log(cartProducts);
+    let totalQuantity = getTotalCartQuantity();
+    setTotalCartQuantity(totalQuantity); 
     setCartItems(cartProducts);
   }, []);
 
@@ -81,6 +76,8 @@ const Cart = () => {
       console.log(cartProducts);
       localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
       setCartItems(cartProducts);
+      let totalQuantity = getTotalCartQuantity();
+      setTotalCartQuantity(totalQuantity); 
       return;
     }
 
@@ -91,14 +88,10 @@ const Cart = () => {
       let cartItem = cartProducts.find((item) => item.id === id);
       cartItem.quantity = quantity;
       console.log(cartProducts);
-      let totalQuantity =  cartProducts.reduce(
-        (acc, item) => acc + item.quantity,
-        0
-      );
-      setTotalCartQuantity(totalQuantity);
       setCartItems(cartProducts);
-
       localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+      let totalQuantity = getTotalCartQuantity();
+      setTotalCartQuantity(totalQuantity);
     } else {
       enqueueSnackbar(MAX_QUANTITY_WARNING, {
         variant: WARNING_MSG,
@@ -122,9 +115,9 @@ const Cart = () => {
             >
               <Box className={styles.image_container}>
                 <img
-                  // Add product image
+                 
                   src={imageURL}
-                  // Add product name as alt eext
+                 
                   alt={name}
                   width="100%"
                   height="100%"
@@ -148,21 +141,15 @@ const Cart = () => {
                   alignItems="center"
                 >
                   <ItemQuantity
-                    // Add required props by checking implementation
-                    //isReadOnly={isReadOnly}
+                    
                     handleAdd={(e) => {
                       handleQuantity(
-                        //  localStorage.getItem("token"),
-
                         id,
                         quantity + 1
                       );
                     }}
                     handleDelete={(e) => {
-                      handleQuantity(
-                        //   localStorage.getItem("token"),
-
-                        id,
+                      handleQuantity(                                            id,
                         quantity - 1
                       );
                     }}

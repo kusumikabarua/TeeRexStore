@@ -11,6 +11,7 @@ import { ADD_TO_CART_WARNING, WARNING_MSG, CART_PRODUCTS_LOCAL_STORAGE,
   PRODUCTS_LOCAL_STORAGE } from "../../constants/constants";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import IconButton from "@mui/material/IconButton";
+import {getTotalCartQuantity} from "../../utils/utils"
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -22,11 +23,7 @@ const Products = () => {
   const { enqueueSnackbar } = useSnackbar();
   useEffect(() => {
     getAllProducts();
-    let cartProducts = JSON.parse(localStorage.getItem("cartProducts") || "[]");
-    let totalQuantity =  cartProducts.reduce(
-      (acc, item) => acc + item.quantity,
-      0
-    );
+    let totalQuantity = getTotalCartQuantity();
     setTotalCartQuantity(totalQuantity);
   }, []);
 
@@ -43,12 +40,9 @@ const Products = () => {
     } else {
       item.quantity = 1;
       cartProducts.push(item);
-      let totalQuantity =  cartProducts.reduce(
-        (acc, item) => acc + item.quantity,
-        0
-      );
-      setTotalCartQuantity(totalQuantity);
       localStorage.setItem(CART_PRODUCTS_LOCAL_STORAGE, JSON.stringify(cartProducts));
+      let totalQuantity = getTotalCartQuantity();
+      setTotalCartQuantity(totalQuantity);
     }
   };
   const getAllProducts = async () => {
@@ -129,3 +123,5 @@ const Products = () => {
 };
 
 export default Products;
+
+

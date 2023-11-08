@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Navbar.module.css";
 import Button from '@mui/material/Button';
 import Badge from '@mui/material/Badge';
@@ -8,9 +8,7 @@ import { Link } from "react-router-dom";
 
 
 const Navbar = ({quantity}) => {
-  useEffect(()=>{
-    
-  },[])
+
   return (
     <nav className={styles.navbar}>
        <h1>{SITE_NAME}</h1>

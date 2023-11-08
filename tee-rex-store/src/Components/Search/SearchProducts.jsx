@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Search } from "@mui/icons-material";
 import { SEARCH_PLACEHOLDER } from "../../constants/constants";
-//import styles from "./SearchProducts.module.css";
+
 
 import { InputAdornment, TextField } from "@mui/material";
 
